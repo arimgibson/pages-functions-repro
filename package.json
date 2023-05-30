@@ -7,9 +7,15 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pages:dev": "wrangler pages dev --compatibility-date=2023-05-30 --proxy 3000 -- astro dev",
+    "pages:deploy": "astro build && wrangler pages publish ./dist"
   },
   "dependencies": {
-    "astro": "^2.4.1"
+    "@astrojs/cloudflare": "^6.3.0",
+    "astro": "^2.5.5"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.1"
   }
 }
